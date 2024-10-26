@@ -1,6 +1,10 @@
 package main.java.exercises.ex03;
 
 import main.java.common.AbstractExercise;
+import main.java.exercises.ex02.NumberBox;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 import static main.java.common.CommonUtils.isFrenchLanguage;
 
@@ -12,7 +16,35 @@ public class ListCalculatorExercise extends AbstractExercise {
 
     @Override
     public void run() {
+        NumberBox<Integer> integerNumberBox = new NumberBox<>(1);
+        NumberBox<Float> floatNumberBox = new NumberBox<>(2f);
+        NumberBox<Double> box3 = new NumberBox<>(3.0);
+        NumberBox<Long> box4 = new NumberBox<>(4L);
 
+        List<NumberBox<? extends Number>> numberBoxes =
+                List.of(
+                        integerNumberBox,
+                        floatNumberBox,
+                        box3,
+                        box4
+                );
+
+        System.out.println("List of NumberBox: " +
+                numberBoxes.stream()
+                        .map(nb -> String.format("%s [%s]", nb.getNumber(), nb.getNumber().getClass().getSimpleName()))
+                        .collect(
+                                Collectors.joining(", ")
+                        )
+        );
+
+        ListCalculator calculator = new ListCalculator(numberBoxes);
+        System.out.println("ListCalculator created with provided NumberBox list.");
+
+        double sum = calculator.computeSum();
+        System.out.println("Computed sum: " + sum);
+
+        double average = calculator.computeAverage();
+        System.out.println("Computed average: " + average);
     }
 
     @Override
