@@ -18,6 +18,7 @@ public class BoxExercise extends AbstractExercise {
     public void run() {
         Object boxElement; // Created with Object type for test the box element type at each step
 
+        /* STRING */
         System.out.println("\n*** STRING BOX ***");
 
         String helloWordString = "Hello World !!!";
@@ -32,6 +33,7 @@ public class BoxExercise extends AbstractExercise {
         );
 
 
+        /* INTEGER */
         System.out.println("\n*** INTEGER BOX ***");
 
         Box<Integer> integerBox = new Box<>(12);
@@ -44,6 +46,7 @@ public class BoxExercise extends AbstractExercise {
         );
 
 
+        /* LIST */
         System.out.println("\n*** LIST BOX ***");
 
         ArrayList<Object> itemList = new ArrayList<>();
@@ -60,6 +63,7 @@ public class BoxExercise extends AbstractExercise {
         );
 
 
+        /* EMPTY TEST */
         System.out.println("\n*** EMPTY TEST ***");
 
         listBox.setElement(null);
