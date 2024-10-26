@@ -40,7 +40,7 @@ public class BoxExercise extends AbstractExercise {
         boxElement = integerBox.getElement(); // Integer strElement = intBox.getElement(); --> Possible here.
 
         System.out.println("Box element : ".concat(boxElement.toString()));
-        System.out.println("Box element type : ".concat(boxElement.getClass().getName()));
+        System.out.println("Box element type : ".concat(boxElement.getClass().getSimpleName()));
         System.out.println("Box is empty : ".concat(
                 Boolean.toString(integerBox.isEmpty()))
         );
@@ -57,7 +57,7 @@ public class BoxExercise extends AbstractExercise {
         boxElement = listBox.getElement(); // List<?> listBoxElement = listBox.getElement(); --> Possible here.
 
         System.out.println("Box element : ".concat(boxElement.toString()));
-        System.out.println("Box element type : ".concat(boxElement.getClass().getName()));
+        System.out.println("Box element type : ".concat(boxElement.getClass().getSimpleName()));
         System.out.println("Box is empty : ".concat(
                 Boolean.toString(listBox.isEmpty()))
         );
