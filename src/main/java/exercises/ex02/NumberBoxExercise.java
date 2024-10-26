@@ -106,8 +106,9 @@ public class NumberBoxExercise extends AbstractExercise {
                 
                 Objectif : Créer une classe NumberBox qui n'accepte que des nombres
                 - Utiliser la restriction extends Number
+                - Implémenter une méthode retournant l'instance nombre en type primitif double
+                - Implémenter une méthode retournant l'instance nombre. Cette méthode sera appelée par la méthode somme.
                 - Implémenter une méthode de somme
-                - Implémenter une méthode retournant le meme type que l'instance de nombre passé dans le constructeur, et qui sera appelée par la méthode somme. 
                 - Démontrer l'utilisation avec différents types numériques
                 """
                 : """
@@ -115,8 +116,9 @@ public class NumberBoxExercise extends AbstractExercise {
                 
                 Objective: Create a NumberBox class that only accepts numbers
                 - Use the extends Number constraint
+                - Implement a method returning the number instance in primitive double type
+                - Implement a method returning the number instance. This method will be called by the sum method.
                 - Implement a sum method
-                - Implement a method that returns the same type as the number instance passed in the constructor, and which will be called by the sum method.
                 - Demonstrate usage with different numeric types
                 """;
     }
