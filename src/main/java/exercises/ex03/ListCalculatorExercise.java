@@ -2,8 +2,6 @@ package main.java.exercises.ex03;
 
 import main.java.common.AbstractExercise;
 
-import java.util.List;
-
 import static main.java.common.CommonUtils.isFrenchLanguage;
 
 public class ListCalculatorExercise extends AbstractExercise {
