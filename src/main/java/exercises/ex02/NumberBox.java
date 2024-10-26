@@ -29,9 +29,13 @@ public class NumberBox<T extends Number> {
         return Objects.isNull(number);
     }
 
+    public double toDouble() {
+        return number.doubleValue();
+    }
+
     public Number sum(T other) {
         return convertToSameType(
-                this.number.doubleValue() + other.doubleValue()
+                this.toDouble() + other.doubleValue()
         );
     }
 
