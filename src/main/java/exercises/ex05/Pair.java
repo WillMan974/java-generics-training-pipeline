@@ -1,9 +1,10 @@
 package main.java.exercises.ex05;
 
 import java.util.List;
-import java.util.Objects;
 import java.util.function.BiConsumer;
 import java.util.function.Function;
+
+import static java.util.Objects.nonNull;
 
 public class Pair<T, U> {
     private T first;
@@ -82,9 +83,9 @@ public class Pair<T, U> {
                             first = %s,
                             second = %s
                         }""",
-                Objects.nonNull(first) ? first.getClass().getSimpleName() : "NULL",
-                Objects.nonNull(second) ? second.getClass().getSimpleName() : "NULL",
-                Objects.nonNull(first) ? first.toString() : "NULL",
-                Objects.nonNull(second) ? second.toString() : "NULL");
+                nonNull(first) ? first.getClass().getSimpleName() : "NULL",
+                nonNull(second) ? second.getClass().getSimpleName() : "NULL",
+                nonNull(first) ? first.toString() : "NULL",
+                nonNull(second) ? second.toString() : "NULL");
     }
 }
