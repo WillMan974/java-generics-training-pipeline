@@ -84,7 +84,7 @@ public class ExerciseRunner {
      * @param exercise the exercise object containing the exercise details and methods
      */
     private static void displayExerciseExecutionPrompt(int number, String language, Exercise exercise) {
-        System.out.println("\n=== " + (isFrenchLanguage(language) ? EXERCISE_FR : EXERCISE_EN).toUpperCase() + number + " ===");
+        System.out.printf("%n=== %s %s ===%n%n", (isFrenchLanguage(language) ? EXERCISE_FR : EXERCISE_EN).toUpperCase(), number);
         System.out.println(exercise.getDescription());
         System.out.println("\n" + (isFrenchLanguage(language) ? EXERCISE_EXECUTION_FR : EXERCISE_EXECUTION_EN) + "\n");
     }
