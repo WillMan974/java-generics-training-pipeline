@@ -16,11 +16,11 @@ public class NumberBox<T extends Number> extends Box<T> {
         super(number);
     }
 
-    public double toDouble() {
+    public Double toDouble() {
         return getItem().doubleValue();
     }
 
-    public Number sum(T other) {
+    public Double sum(T other) {
         return toDouble() + other.doubleValue();
     }
 
