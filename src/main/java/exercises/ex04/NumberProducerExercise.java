@@ -3,6 +3,7 @@ package main.java.exercises.ex04;
 import main.java.common.AbstractExercise;
 import main.java.exercises.ex01.Box;
 import main.java.exercises.ex02.NumberBox;
+import main.java.exercises.ex03.NumberConsumer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -18,7 +19,7 @@ public class NumberProducerExercise extends AbstractExercise {
 
     @Override
     public void run() {
-        // Démonstration de la covariance
+        // Demonstration of covariance using NumberConsumer
         List<NumberBox<? extends Number>> numberBoxes = List.of(
                 new NumberBox<>(1),    // Integer
                 new NumberBox<>(2f),   // Float
@@ -26,14 +27,23 @@ public class NumberProducerExercise extends AbstractExercise {
                 new NumberBox<>(4L)    // Long
         );
 
-        System.out.println("Liste de NumberBox avec covariance:\n" +
+        // Initialize NumberConsumer with a covariant list
+        NumberConsumer consumer = new NumberConsumer(numberBoxes);
+
+        // Compute sum and average
+        double sum = consumer.computeSum();
+        double average = consumer.computeAverage();
+
+        // Displaying results
+        System.out.println("\nList of NumberBox with covariance:\n" +
                 numberBoxes.stream()
                         .map(Object::toString)
                         .collect(Collectors.joining(",\n"))
         );
+        System.out.println("Computed sum: " + sum);
+        System.out.println("Computed average: " + average);
 
-
-        // Démonstration de la contravariance
+        // Demonstration of contravariance using NumberProducer
         List<Box<? super Integer>> integerBoxList = new ArrayList<>(
                 List.of(
                         new NumberBox<>(1),
@@ -41,38 +51,41 @@ public class NumberProducerExercise extends AbstractExercise {
                 )
         );
 
+        // Initialize NumberProducer with a contravariant list
+        NumberProducer producer = new NumberProducer(integerBoxList);
 
-        integerBoxList.add(new Box<>(3)); // Integer
-        integerBoxList.add(new Box<>(4L)); // Long
+        // Adding integers via NumberProducer
+        producer.addBox(new Box<>(3));  // Integer
+        producer.addBox(new Box<>(4));  // Integer
 
-        // Affichage des éléments de la liste
-        System.out.println("Liste de Box avec contravariance:\n" +
-                integerBoxList.stream()
+        // Displaying elements of the list
+        System.out.println("\nList of Box with contravariance (used by NumberProducer):\n" +
+                producer.getNumberBoxes().stream()
                         .map(Object::toString)
                         .collect(Collectors.joining(",\n"))
         );
 
-        // Manipulation de différents types de listes
-        // Liste de NumberBox
+        // Handling different types of lists
+        // List of NumberBox
         List<NumberBox<Double>> doubleNumberBoxes = new ArrayList<>(List.of(
                 new NumberBox<>(5.5),
                 new NumberBox<>(6.6)
         ));
 
-        // Liste de Box
+        // List of Box
         List<Box<Number>> numberBoxList = List.of(
                 new Box<>(7),
                 new NumberBox<>(8f)
         );
 
-        // Affichage des listes
-        System.out.println("Liste de NumberBox spécifiques (Double):\n" +
+        // Displaying the lists
+        System.out.println("\nList of specific NumberBox (Double):\n" +
                 doubleNumberBoxes.stream()
                         .map(Object::toString)
                         .collect(Collectors.joining(",\n"))
         );
 
-        System.out.println("Liste de Box génériques (Number):\n" +
+        System.out.println("\nList of generic Box (Number):\n" +
                 numberBoxList.stream()
                         .map(Object::toString)
                         .collect(Collectors.joining(",\n"))
