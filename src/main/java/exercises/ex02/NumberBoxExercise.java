@@ -20,10 +20,10 @@ public class NumberBoxExercise extends AbstractExercise {
         int intNumber = 12;
         NumberBox<Integer> integerNumberBox = new NumberBox<>(intNumber);
 
-        boxNumber = integerNumberBox.getNumber();
+        boxNumber = integerNumberBox.getItem();
 
         System.out.println("Box element : ".concat(boxNumber.toString()));
-        System.out.println("Box element type : ".concat(boxNumber.getClass().getName()));
+        System.out.println("Box element type : ".concat(boxNumber.getClass().getSimpleName()));
         System.out.println("Box is empty : ".concat(
                 Boolean.toString(integerNumberBox.isEmpty()))
         );
@@ -31,9 +31,9 @@ public class NumberBoxExercise extends AbstractExercise {
         Number sum = integerNumberBox.sum(21);
 
         System.out.println("Sum : ".concat(sum.toString()));
-        System.out.println("Sum type : ".concat(sum.getClass().getName()));
+        System.out.println("Sum type : ".concat(sum.getClass().getSimpleName()));
 
-        integerNumberBox.setNumber(null);
+        integerNumberBox.setItem(null);
 
         System.out.println("Box is empty : ".concat(
                 Boolean.toString(integerNumberBox.isEmpty()))
@@ -46,10 +46,10 @@ public class NumberBoxExercise extends AbstractExercise {
         double doubleNumber = 12.5;
         NumberBox<Double> doubleNumberBox = new NumberBox<>(doubleNumber);
 
-        boxNumber = doubleNumberBox.getNumber();
+        boxNumber = doubleNumberBox.getItem();
 
         System.out.println("Box element: " + boxNumber);
-        System.out.println("Box element type: " + boxNumber.getClass().getName());
+        System.out.println("Box element type: " + boxNumber.getClass().getSimpleName());
         System.out.println("Box is empty: " + doubleNumberBox.isEmpty());
 
         Number sumDouble = doubleNumberBox.sum(10.5);
@@ -63,10 +63,10 @@ public class NumberBoxExercise extends AbstractExercise {
         float floatNumber = 12.5f;
         NumberBox<Float> floatNumberBox = new NumberBox<>(floatNumber);
 
-        boxNumber = floatNumberBox.getNumber();
+        boxNumber = floatNumberBox.getItem();
 
         System.out.println("Box element: " + boxNumber);
-        System.out.println("Box element type: " + boxNumber.getClass().getName());
+        System.out.println("Box element type: " + boxNumber.getClass().getSimpleName());
         System.out.println("Box is empty: " + floatNumberBox.isEmpty());
 
         Number sumFloat = floatNumberBox.sum(10.5f);
@@ -80,20 +80,20 @@ public class NumberBoxExercise extends AbstractExercise {
         long longNumber = 12L;
         NumberBox<Long> longNumberBox = new NumberBox<>(longNumber);
 
-        Long boxNumberLong = longNumberBox.getNumber();
+        Long boxNumberLong = longNumberBox.getItem();
 
         System.out.println("Box element: " + boxNumberLong);
-        System.out.println("Box element type: " + boxNumberLong.getClass().getName());
+        System.out.println("Box element type: " + boxNumberLong.getClass().getSimpleName());
         System.out.println("Box is empty: " + longNumberBox.isEmpty());
 
         Number sumLong = longNumberBox.sum(10L);
 
         System.out.println("Sum: " + sumLong);
-        System.out.println("Sum type: " + sumLong.getClass().getName());
+        System.out.println("Sum type: " + sumLong.getClass().getSimpleName());
 
 
         /* NULL TEST */
-        longNumberBox.setNumber(null);
+        longNumberBox.setItem(null);
         System.out.println("Box is empty: " + longNumberBox.isEmpty());
 
     }
@@ -107,7 +107,6 @@ public class NumberBoxExercise extends AbstractExercise {
                 Objectif : Créer une classe NumberBox qui n'accepte que des nombres
                 - Utiliser la restriction extends Number
                 - Implémenter une méthode retournant l'instance nombre en type primitif double
-                - Implémenter une méthode retournant l'instance nombre. Cette méthode sera appelée par la méthode somme.
                 - Implémenter une méthode de somme
                 - Démontrer l'utilisation avec différents types numériques
                 """
@@ -117,7 +116,6 @@ public class NumberBoxExercise extends AbstractExercise {
                 Objective: Create a NumberBox class that only accepts numbers
                 - Use the extends Number constraint
                 - Implement a method returning the number instance in primitive double type
-                - Implement a method returning the number instance. This method will be called by the sum method.
                 - Implement a sum method
                 - Demonstrate usage with different numeric types
                 """;
