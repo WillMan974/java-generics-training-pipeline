@@ -1,6 +1,6 @@
 package main.java.exercises.ex01;
 
-import java.util.Objects;
+import static java.util.Objects.*;
 
 /**
  * A generic container class that holds a single element of type T.
@@ -8,21 +8,34 @@ import java.util.Objects;
  * @param <T> the type of the element contained in the Box
  */
 public class Box<T> {
-    private T element;
+    private T item;
 
-    public Box(T element) {
-        this.element = element;
+    public Box(T item) {
+        this.item = item;
     }
 
-    public T getElement() {
-        return element;
+    public T getItem() {
+        return item;
     }
 
-    public void setElement(T element) {
-        this.element = element;
+    public void setItem(T item) {
+        this.item = item;
     }
 
     public Boolean isEmpty() {
-        return Objects.isNull(element);
+        return isNull(item);
+    }
+
+    @Override
+    public String toString() {
+        return String.format("""
+                {
+                    type: Box<%s>,
+                    content: %s
+                }
+                """,
+                nonNull(item) ? item.getClass().getSimpleName() : "NULL",
+                nonNull(item) ? item.toString() : "NULL"
+        );
     }
 }

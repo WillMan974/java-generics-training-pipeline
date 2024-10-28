@@ -24,7 +24,7 @@ public class BoxExercise extends AbstractExercise {
         String helloWordString = "Hello World !!!";
         Box<String> stringBox = new Box<>(helloWordString);
 
-        boxElement = stringBox.getElement(); // String strElement = stringBox.getElement(); --> Possible here.
+        boxElement = stringBox.getItem(); // String strElement = stringBox.getElement(); --> Possible here.
 
         System.out.println("Box element : ".concat(boxElement.toString()));
         System.out.println("Box element type : ".concat(boxElement.getClass().getName()));
@@ -37,7 +37,7 @@ public class BoxExercise extends AbstractExercise {
         System.out.println("\n*** INTEGER BOX ***");
 
         Box<Integer> integerBox = new Box<>(12);
-        boxElement = integerBox.getElement(); // Integer strElement = intBox.getElement(); --> Possible here.
+        boxElement = integerBox.getItem(); // Integer strElement = intBox.getElement(); --> Possible here.
 
         System.out.println("Box element : ".concat(boxElement.toString()));
         System.out.println("Box element type : ".concat(boxElement.getClass().getSimpleName()));
@@ -54,7 +54,7 @@ public class BoxExercise extends AbstractExercise {
         itemList.add(38);
 
         Box<List<?>> listBox = new Box<>(itemList);
-        boxElement = listBox.getElement(); // List<?> listBoxElement = listBox.getElement(); --> Possible here.
+        boxElement = listBox.getItem(); // List<?> listBoxElement = listBox.getElement(); --> Possible here.
 
         System.out.println("Box element : ".concat(boxElement.toString()));
         System.out.println("Box element type : ".concat(boxElement.getClass().getSimpleName()));
@@ -66,8 +66,8 @@ public class BoxExercise extends AbstractExercise {
         /* EMPTY TEST */
         System.out.println("\n*** EMPTY TEST ***");
 
-        listBox.setElement(null);
-        boxElement = listBox.getElement();
+        listBox.setItem(null);
+        boxElement = listBox.getItem();
 
         System.out.println("Box element : ".concat(
                 Objects.isNull(boxElement) ? "[NULL]" : boxElement.toString()
