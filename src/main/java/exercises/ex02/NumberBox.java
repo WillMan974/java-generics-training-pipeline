@@ -2,9 +2,7 @@ package main.java.exercises.ex02;
 
 import main.java.exercises.ex01.Box;
 
-import java.util.Objects;
-
-import static java.util.Objects.*;
+import static java.util.Objects.nonNull;
 
 /**
  * A specialized Box that holds a single element which is a subclass of the Number class.
