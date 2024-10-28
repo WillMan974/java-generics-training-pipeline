@@ -36,7 +36,7 @@ public class ExerciseRunner {
      * Runs the specified exercise based on the provided exercise number and language.
      * If the exercise number is not valid, an IllegalArgumentException is thrown.
      *
-     * @param number the number of the exercise to run
+     * @param number   the number of the exercise to run
      * @param language the language in which instructions should be displayed ("EN" or "FR")
      * @throws IllegalArgumentException if the exercise number is not found
      */
@@ -44,8 +44,8 @@ public class ExerciseRunner {
         Exercise exercise = switch (number) {
             case 1 -> new BoxExercise(language);
             case 2 -> new NumberBoxExercise(language);
-            case 3 -> new ListCalculatorExercise(language);
-            case 4 -> new NumberAdderExercise(language);
+            case 3 -> new NumberConsumerExercise(language);
+            case 4 -> new NumberProducerExercise(language);
             case 5 -> new PairExercise(language);
             case 6 -> new ArrayUtilsExercise(language);
             case 7 -> new GenericStackExercise(language);
@@ -79,7 +79,7 @@ public class ExerciseRunner {
     /**
      * Displays the execution prompt for a specified exercise.
      *
-     * @param number the number of the exercise to run
+     * @param number   the number of the exercise to run
      * @param language the language in which instructions should be displayed ("EN" or "FR")
      * @param exercise the exercise object containing the exercise details and methods
      */
