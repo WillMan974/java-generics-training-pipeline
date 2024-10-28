@@ -1,6 +1,7 @@
 package main.java.exercises.ex01;
 
-import static java.util.Objects.*;
+import static java.util.Objects.isNull;
+import static java.util.Objects.nonNull;
 
 /**
  * A generic container class that holds a single element of type T.
@@ -29,11 +30,10 @@ public class Box<T> {
     @Override
     public String toString() {
         return String.format("""
-                {
-                    type: Box<%s>,
-                    content: %s
-                }
-                """,
+                        {
+                            type: Box<%s>,
+                            content: %s
+                        }""",
                 nonNull(item) ? item.getClass().getSimpleName() : "NULL",
                 nonNull(item) ? item.toString() : "NULL"
         );
