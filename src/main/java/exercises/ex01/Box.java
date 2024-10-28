@@ -30,12 +30,10 @@ public class Box<T> {
     @Override
     public String toString() {
         return String.format("""
-                        {
-                            type: Box<%s>,
-                            content: %s
+                        Box<%s> {
+                            item = %s
                         }""",
                 nonNull(item) ? item.getClass().getSimpleName() : "NULL",
-                nonNull(item) ? item.toString() : "NULL"
-        );
+                nonNull(item) ? item.toString() : "NULL");
     }
 }

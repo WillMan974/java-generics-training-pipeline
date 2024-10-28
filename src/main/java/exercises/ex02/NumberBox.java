@@ -2,7 +2,9 @@ package main.java.exercises.ex02;
 
 import main.java.exercises.ex01.Box;
 
-import static java.util.Objects.nonNull;
+import java.util.Objects;
+
+import static java.util.Objects.*;
 
 /**
  * A specialized Box that holds a single element which is a subclass of the Number class.
@@ -26,14 +28,11 @@ public class NumberBox<T extends Number> extends Box<T> {
 
     @Override
     public String toString() {
-        T number = getItem();
         return String.format("""
-                        {
-                            type: NumberBox<%s>,
-                            content: %s
+                        NumberBox<%s> {
+                            item = %s
                         }""",
-                nonNull(number) ? number.getClass().getSimpleName() : "null",
-                nonNull(number) ? number.toString() : "null"
-        );
+                nonNull(getItem()) ? getItem().getClass().getSimpleName() : "NULL",
+                nonNull(getItem()) ? getItem().toString() : "NULL");
     }
 }
