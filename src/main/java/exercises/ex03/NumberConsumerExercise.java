@@ -8,9 +8,9 @@ import java.util.stream.Collectors;
 
 import static main.java.common.CommonUtils.isFrenchLanguage;
 
-public class ListCalculatorExercise extends AbstractExercise {
+public class NumberConsumerExercise extends AbstractExercise {
 
-    public ListCalculatorExercise(String language) {
+    public NumberConsumerExercise(String language) {
         super(language);
     }
 
@@ -31,19 +31,19 @@ public class ListCalculatorExercise extends AbstractExercise {
 
         System.out.println("List of NumberBox: " +
                 numberBoxes.stream()
-                        .map(nb -> String.format("%s [%s]", nb.getNumber(), nb.getNumber().getClass().getSimpleName()))
+                        .map(nb -> String.format("%s [%s]", nb.getItem(), nb.getItem().getClass().getSimpleName()))
                         .collect(
                                 Collectors.joining(", ")
                         )
         );
 
-        ListCalculator calculator = new ListCalculator(numberBoxes);
-        System.out.println("ListCalculator created with provided NumberBox list.");
+        NumberConsumer consumer = new NumberConsumer(numberBoxes);
+        System.out.println("NumberConsumer created with provided NumberBox list.");
 
-        double sum = calculator.computeSum();
+        double sum = consumer.computeSum();
         System.out.println("Computed sum: " + sum);
 
-        double average = calculator.computeAverage();
+        double average = consumer.computeAverage();
         System.out.println("Computed average: " + average);
     }
 

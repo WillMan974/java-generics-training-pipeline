@@ -5,6 +5,7 @@ import main.java.exercises.ex01.BoxExercise;
 import main.java.exercises.ex02.NumberBoxExercise;
 import main.java.exercises.ex03.ListCalculatorExercise;
 import main.java.exercises.ex04.NumberAdderExercise;
+import main.java.exercises.ex03.NumberConsumerExercise;
 import main.java.exercises.ex05.PairExercise;
 import main.java.exercises.ex06.ArrayUtilsExercise;
 import main.java.exercises.ex07.GenericStackExercise;
