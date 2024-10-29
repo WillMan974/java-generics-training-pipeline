@@ -12,7 +12,28 @@ public class StringGenericStackExercise extends AbstractExercise {
 
     @Override
     public void run() {
-        // ...
+        StringGenericStack stack = new StringGenericStack();
+
+        stack.push("Hello");
+        System.out.println("Après push 'Hello':");
+        System.out.println("Stack size: " + stack.size());
+        System.out.println("Stack is empty: " + stack.isEmpty());
+
+        stack.clear();
+        System.out.println("\nAprès clear:");
+        System.out.println("Stack size: " + stack.size());
+        System.out.println("Stack is empty: " + stack.isEmpty());
+
+        stack.push("World");
+        System.out.println("\nAprès push 'World':");
+        System.out.println("Stack size: " + stack.size());
+        System.out.println("Stack is empty: " + stack.isEmpty());
+
+        String string = stack.pop();
+        System.out.println("\nAprès pop:");
+        System.out.println("Popped element: " + string);
+        System.out.println("Stack size: " + stack.size());
+        System.out.println("Stack is empty: " + stack.isEmpty());
     }
 
     @Override
