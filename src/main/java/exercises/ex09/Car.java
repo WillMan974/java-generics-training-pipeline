@@ -1,8 +1,6 @@
 package main.java.exercises.ex09;
 
-import java.util.Objects;
-
-import static java.util.Objects.*;
+import static java.util.Objects.nonNull;
 
 public class Car {
     private String brand;
