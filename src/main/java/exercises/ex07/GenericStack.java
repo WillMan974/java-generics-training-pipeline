@@ -2,6 +2,12 @@ package main.java.exercises.ex07;
 
 import java.util.Objects;
 
+/**
+ * A generic stack implementation that supports typical stack operations such as push, pop, and peek.
+ * This stack can optionally have a size limit, beyond which no more elements can be pushed.
+ *
+ * @param <T> the type of elements in the stack
+ */
 public class GenericStack<T> {
 
     private Node<T> top;

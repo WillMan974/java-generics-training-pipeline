@@ -3,6 +3,10 @@ package main.java.exercises.ex06;
 import java.util.Arrays;
 import java.util.Comparator;
 
+/**
+ * Utility class for array operations, providing static methods for
+ * common tasks such as swapping elements and sorting arrays.
+ */
 public class ArrayUtils {
     private ArrayUtils() {
     }

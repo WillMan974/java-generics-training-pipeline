@@ -6,6 +6,12 @@ import java.util.function.Function;
 
 import static java.util.Objects.nonNull;
 
+/**
+ * A generic class representing a pair of objects.
+ *
+ * @param <T> the type of the first object in the pair
+ * @param <U> the type of the second object in the pair
+ */
 public class Pair<T, U> {
     private T first;
     private U second;

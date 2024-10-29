@@ -2,6 +2,10 @@ package main.java.exercises.ex09;
 
 import static java.util.Objects.nonNull;
 
+/**
+ * The Car class represents a car with various attributes such as brand, model, year, mileage, color,
+ * license plate, and engine. It provides a builder for creating instances of the Car class.
+ */
 public class Car {
     private String brand;
     private String model;
