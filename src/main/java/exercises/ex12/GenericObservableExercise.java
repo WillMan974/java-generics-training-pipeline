@@ -1,6 +1,7 @@
 package main.java.exercises.ex12;
 
 import main.java.common.AbstractExercise;
+import main.java.exercises.ex02.NumberBox;
 
 import static main.java.common.CommonUtils.isFrenchLanguage;
 
@@ -12,7 +13,23 @@ public class GenericObservableExercise extends AbstractExercise {
 
     @Override
     public void run() {
-        // ...
+        GenericPublisher<String> stringPublisher = new GenericPublisher<>();
+        Subscriber<String> stringSubscriber = new StringSubscriber();
+
+        stringPublisher.addSubscriber(stringSubscriber);
+
+        stringPublisher.notifyObservers(
+                "This is an update !!!"
+        );
+
+
+        GenericPublisher<NumberBox<Integer>> integerNumberBoxPublisher = new GenericPublisher<>();
+        Subscriber<NumberBox<Integer>> integerNumberBoxSubscriber = new IntegerNumberBoxSubscriber();
+        integerNumberBoxPublisher.addSubscriber(integerNumberBoxSubscriber);
+
+        integerNumberBoxPublisher.notifyObservers(
+                new NumberBox<>(10)
+        );
     }
 
     @Override
