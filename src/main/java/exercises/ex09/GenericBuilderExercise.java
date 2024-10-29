@@ -12,7 +12,17 @@ public class GenericBuilderExercise extends AbstractExercise {
 
     @Override
     public void run() {
-        // ...
+        Car teslaCar = Car.builder()
+                .brand("Tesla")
+                .model("Model X")
+                .engine("Electric")
+                .color("Red")
+                .licencePlate("AB-123-CD")
+                .mileage(152)
+                .year(2020)
+                .build();
+
+        System.out.println(teslaCar);
     }
 
     @Override
