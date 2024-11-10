@@ -42,6 +42,8 @@ public class GenericObservableExercise extends AbstractExercise {
                 - Créer un système d'observateur flexible
                 - Permettre l'observation de différents types d'événements
                 - Utiliser les lambda pour simplifier l'implémentation
+                
+                Voir: https://refactoring.guru/fr/design-patterns/observer/java/example
                 """
                 : """
                 Exercise 12: Generic Observable
@@ -50,6 +52,8 @@ public class GenericObservableExercise extends AbstractExercise {
                 - Create a flexible observer system
                 - Allow observation of different types of events
                 - Use lambdas to simplify the implementation
+                
+                See: https://refactoring.guru/design-patterns/observer
                 """;
     }
 }
