@@ -12,7 +12,49 @@ public class StateManagerExercise extends AbstractExercise {
 
     @Override
     public void run() {
-        // ...
+        StateManager<String> stateManager = new StateManager<>();
+
+        // Initial state
+        System.out.println("Setting initial state to 'State1'");
+        stateManager.setState("State1");
+        System.out.println("Current State: " + stateManager.getCurrentState().orElse("None"));
+
+        // Setting new states
+        System.out.println("Setting state to 'State2'");
+        stateManager.setState("State2");
+        System.out.println("Current State: " + stateManager.getCurrentState().orElse("None"));
+
+        System.out.println("Setting state to 'State3'");
+        stateManager.setState("State3");
+        System.out.println("Current State: " + stateManager.getCurrentState().orElse("None"));
+
+        // Undo operations
+        System.out.println("Performing undo operation");
+        stateManager.undo();
+        System.out.println("Current State after 1st undo: " + stateManager.getCurrentState().orElse("None"));
+
+        System.out.println("Performing another undo operation");
+        stateManager.undo();
+        System.out.println("Current State after 2nd undo: " + stateManager.getCurrentState().orElse("None"));
+
+        // Redo operations
+        System.out.println("Performing redo operation");
+        stateManager.redo();
+        System.out.println("Current State after 1st redo: " + stateManager.getCurrentState().orElse("None"));
+
+        // Reverting by count
+        System.out.println("Rolling back 1 more state");
+        stateManager.revertStatesByCount(1);
+        System.out.println("Current State after rollback: " + stateManager.getCurrentState().orElse("None"));
+
+        // Clearing all states history
+        System.out.println("Clearing all states");
+        stateManager.clear();
+        System.out.println("Current State after clearing: " + stateManager.getCurrentState().orElse("None"));
+
+        // Display histories
+        System.out.println("Undo history: " + stateManager.getUndoHistory());
+        System.out.println("Redo history: " + stateManager.getRedoHistory());
     }
 
     @Override
