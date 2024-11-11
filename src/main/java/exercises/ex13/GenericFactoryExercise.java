@@ -1,6 +1,7 @@
 package main.java.exercises.ex13;
 
 import main.java.common.AbstractExercise;
+import main.java.exercises.ex09.Car;
 
 import static main.java.common.CommonUtils.isFrenchLanguage;
 
@@ -12,7 +13,25 @@ public class GenericFactoryExercise extends AbstractExercise {
 
     @Override
     public void run() {
-        // ...
+        System.out.println("Starting run method...");
+
+        // Initialize the generic factory
+        GenericFactory factory = new GenericFactory();
+        System.out.printf("Factory initialized: %s%n", factory);
+
+        // Create a specific creator for Car objects
+        CarCreator carCreator = new CarCreator();
+        System.out.printf("CarCreator created: %s%n", carCreator);
+
+        // Register the CarCreator with the factory
+        factory.register(Car.class, carCreator);
+        System.out.printf("CarCreator registered for class: %s%n", Car.class);
+
+        // Use the factory to create a Car object
+        Car createdCar = factory.create(Car.class);
+        System.out.printf("Car created: %s%n", createdCar);
+
+        System.out.println("Run method completed");
     }
 
     @Override
