@@ -2,6 +2,8 @@ package main.java.exercises.ex16;
 
 import main.java.common.AbstractExercise;
 
+import java.util.Optional;
+
 import static main.java.common.CommonUtils.isFrenchLanguage;
 
 public class ObjectPoolExercise extends AbstractExercise {
@@ -12,7 +14,21 @@ public class ObjectPoolExercise extends AbstractExercise {
 
     @Override
     public void run() {
-        // ...
+        ObjectPool<String> stringPool = new ObjectPool<>(() -> "New Object");
+
+        System.out.println("ObjectPool created with a factory to produce 'New Object'");
+
+        Optional<String> obj1 = stringPool.acquire();
+        System.out.printf("Acquired: %s%n", obj1.orElse("None"));
+
+        obj1.ifPresent(stringPool::release);
+        System.out.println("Released acquired object back to the pool.");
+
+        Optional<String> obj2 = stringPool.acquire();
+        System.out.printf("Acquired: %s%n", obj2.orElse("None"));
+
+        Optional<String> obj3 = stringPool.acquire();
+        System.out.printf("Acquired: %s%n", obj3.orElse("None"));
     }
 
     @Override
