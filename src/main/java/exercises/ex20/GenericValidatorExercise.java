@@ -20,13 +20,13 @@ public class GenericValidatorExercise extends AbstractExercise {
     public String getDescription() {
         return isFrenchLanguage(language)
                 ? """
-                Exercice 20 : Pipeline de transformation générique
+                Exercice 20 : Validateur générique
                 
                 Objectif : Créer un système de validation flexible et composable
                 - Implémenter un validateur qui peut combiner différentes règles de validation
                 """
                 : """
-                Exercise 20: Generic Transformation Pipeline
+                Exercise 20: Generic validator
                 
                 Objective: Create a flexible and composable validation system
                 - Implement a validator that can combine different validation rules
